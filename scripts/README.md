@@ -1,5 +1,5 @@
 ## Installation
-It is recommended to use a Python virtual enviroment to run solidity code that runs any scripts. There is a requirement file for each Python script with the script's name concatenated with *Requirements.txt*.  
+There is a requirement file for each Python script with the script's name concatenated with *Requirements.txt*. It is recommended to use a Python virtual enviroment to run solidity code that runs any scripts.
 
 ## Usage
 This scripts are automatically used by the solidity contracts present in this repo. The scripts are called by the *ffi* function present in the foundry [Cheatcodes](https://book.getfoundry.sh/cheatcodes/ffi.html?highlight=ffi#ffi)
