@@ -1,0 +1,3 @@
+[profile.default]
+ffi = true
+fs_permissions = [{ access = "read-write", path = "./"}]
