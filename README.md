@@ -3,7 +3,7 @@
 
 **A library to aid in smart contract development using foundry.** 
 
- * Implementation of Test Helpers like [MerkleTreeTestHelpers](https://github.com/threesigmaxyz/threesigma-contracts/contracts/foundry-test-helpers/MerkleTreeTestHelper.sol)
+ * Implementation of Test Helpers like [MerkleTree.sol](https://github.com/threesigmaxyz/threesigma-contracts/blob/main/src/extensions/MerkleTree.sol)
 
 
 ## Installation
