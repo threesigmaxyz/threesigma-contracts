@@ -1,3 +1,8 @@
+# merkle_tree_output files
+    src/extensions/merkle_tree_output/leaves.json
+    src/extensions/merkle_tree_output/merkle_tree.json
+    src/extensions/merkle_tree_output/proofs.json
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -14,7 +19,6 @@ dist/
 downloads/
 eggs/
 .eggs/
-lib/
 lib64/
 parts/
 sdist/

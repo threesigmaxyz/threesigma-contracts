@@ -28,11 +28,12 @@ After installing and setting the remapping variable, it is possible to use the c
 ```solidity
 pragma solidity ^0.8.15;
 
-import "@threesigma/contracts/foundry-test-helpers/MerkleTreeTestHelper.sol";
+import "@threesigma/src/ThreeSigmaTest.sol";
 
-contract MyCollectible is MerkleTreeTestHelper {
-    function setUp() {
-        setMerkleTree("addresses.txt");
+contract MyCollectible is ThreeSigmaTest {
+
+    function doSomething() {
+        Proofs memory proofs = getMerkleProofs(<path_to_input_file>.txt);
     }
 }
 ```

@@ -93,7 +93,7 @@ class MerkleTools(object):
                 is_right_node = index % 2
                 sibling_index = index - 1 if is_right_node else index + 1
                 sibling_pos = "left" if is_right_node else "right"
-                sibling_value = self._to_hex(self.levels[x][sibling_index])
+                sibling_value = '0x' + str(self._to_hex(self.levels[x][sibling_index]))
                 proof.append({sibling_pos: sibling_value})
                 index = int(index / 2.)
             return proof
