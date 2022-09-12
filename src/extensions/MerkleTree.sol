@@ -1,8 +1,8 @@
+// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.13;
 
 import "forge-std/Test.sol";
 import "forge-std/StdJson.sol";
-import "ds-test/test.sol";
 import "../interfaces/IMerkleTree.sol";
 
 contract MerkleTreeHelper is Test, IMerkleTree {
