@@ -13,7 +13,7 @@ contract MerkleTreeHelper is Test, IMerkleTree {
 
         _executeScript("output_addresses", filename);
 
-        string memory json = vm.readFile("src/extensions/merkle_tree_output/leaves.json");
+        string memory json = vm.readFile("lib/threesigma-contracts/src/extensions/merkle_tree_output/leaves.json");
         bytes memory rawAddresses = vm.parseJson(json);
         Leaves memory leaves = abi.decode(rawAddresses, (Leaves));
 
@@ -24,7 +24,7 @@ contract MerkleTreeHelper is Test, IMerkleTree {
 
         string[] memory inputs = new string[](4);
         inputs[0] = "python3";
-        inputs[1] = "src/scripts/MerkleTreeProvider.py";
+        inputs[1] = "lib/threesigma-contracts/src/scripts/MerkleTreeProvider.py";
         inputs[2] = "output_merkle_root";
         inputs[3] = filename;
 
@@ -38,7 +38,7 @@ contract MerkleTreeHelper is Test, IMerkleTree {
         
         _executeScript("output_merkle_proofs", filename);
 
-        string memory json = vm.readFile("src/extensions/merkle_tree_output/proofs.json");
+        string memory json = vm.readFile("lib/threesigma-contracts/src/extensions/merkle_tree_output/proofs.json");
         bytes memory rawProofs = vm.parseJson(json);
         Proofs memory proofs = abi.decode(rawProofs, (Proofs));
 
@@ -62,7 +62,7 @@ contract MerkleTreeHelper is Test, IMerkleTree {
         string[] memory inputs = new string[](4);
         // change this to foundry cheatcodes not ffi with a python script
         inputs[0] = "python3";
-        inputs[1] = "src/scripts/MerkleTreeProvider.py";
+        inputs[1] = "lib/threesigma-contracts/src/scripts/MerkleTreeProvider.py";
         inputs[2] = funcName;
         inputs[3] = filename;
 

@@ -4,7 +4,9 @@ import os
 from functools import reduce
 from utils.merkletools import MerkleTools
 
+path = os.path.realpath("lib/threesigma-contracts/src/extensions/merkle_tree_output/")
 class FFIProvider():
+    
 
     def output_int(self, integer):
         sys.stdout.write(str(hex(integer)[2:]).zfill(64))
@@ -13,8 +15,9 @@ class FFIProvider():
         sys.stdout.write(string)
 
     def output_addresses(self, filename):
-        if os.path.exists("src/extensions/merkle_tree_output/leaves.json"):
-            os.remove("src/extensions/merkle_tree_output/leaves.json")
+        print()
+        if os.path.exists(path + "/leaves.json"):
+            os.remove(path + "/leaves.json")
 
         addresses = []
         with open(filename, "r") as f:
@@ -27,7 +30,7 @@ class FFIProvider():
         
         json_output = json.dumps(output_dict, indent=4)
 
-        with open("src/extensions/merkle_tree_output/leaves.json", "w+") as output_file:
+        with open(path + "/leaves.json", "w+") as output_file:
             output_file.write(json_output)
     
     def output_int_array(self, filename):
@@ -48,8 +51,8 @@ class FFIProvider():
         sys.stdout.write("".join(strings))
     
     def output_merkle_proofs(self, filename):
-        if os.path.exists("src/extensions/merkle_tree_output/proofs.json"):
-            os.remove("src/extensions/merkle_tree_output/proofs.json")
+        if os.path.exists(path + "/proofs.json"):
+            os.remove(path + "/proofs.json")
 
         mt = MerkleTools()
 
@@ -81,7 +84,7 @@ class FFIProvider():
 
         json_output = json.dumps(output_dict, indent = 4)
 
-        with open('src/extensions/merkle_tree_output/proofs.json', 'w') as output_file:
+        with open(path + '/proofs.json', 'w') as output_file:
             output_file.write(json_output)
 
     def output_merkle_root(self,filename):
@@ -98,8 +101,8 @@ class FFIProvider():
         sys.stdout.write(root)
 
     def output_merkle_tree(self, filename):
-        if os.path.exists("src/extensions/merkle_tree_output/merkle_tree.json"):
-            os.remove("src/extensions/merkle_tree_output/merkle_tree.json")
+        if os.path.exists(path + "/merkle_tree.json"):
+            os.remove(path + "/merkle_tree.json")
 
         #Build the Merkle Tree
         mt = MerkleTools()
@@ -139,7 +142,7 @@ class FFIProvider():
 
         json_output = json.dumps(output_dict, indent = 4)
 
-        with open('src/extensions/merkle_tree_output/merkle_tree.json', 'w') as output_file:
+        with open(path + '/merkle_tree.json', 'w') as output_file:
             output_file.write(json_output)
 
 if __name__ == "__main__":
