@@ -23,7 +23,7 @@ class FFIProvider():
         with open(filename, "r") as f:
             lines = f.readlines()
             for line in lines:
-                addresses.append(line[:-1])
+                addresses.append('0x' + line[:-1])
                 # output_dict = dict(list(output_dict.items()) + list({key: value}.items()))
 
         output_dict = {'addresses': addresses}
@@ -119,7 +119,7 @@ class FFIProvider():
 
         # Populate leaves list
         for line in lines:
-            leaves.append(line[:-1])
+            leaves.append('0x' + line[:-1])
         
         # Populate proofs and proofs lengths list
         for i in range(len(lines)):
