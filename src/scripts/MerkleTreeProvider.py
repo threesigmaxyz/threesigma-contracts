@@ -56,19 +56,23 @@ class FFIProvider():
 
         mt = MerkleTools()
 
+        whitelists_bytes = []
+        whitelists = []
         with open(filename, "r") as f:
-            n_leafs = len(f.readlines())
-        
-        mt.add_leaf([str(i).encode() for i in range(int(n_leafs))], True)
+            for line in f.readlines():
+                whitelists_bytes += [bytes.fromhex(line)] 
+                whitelists += [line]
+
+        mt.add_leaf(whitelists_bytes, True)
         mt.make_tree()
 
-        lengths = [len(mt.get_proof(i)) for i in range(int(n_leafs))]
+        lengths = [len(mt.get_proof(i)) for i in range(len(whitelists))]
 
         output_dict = {'lengths': lengths}
 
         all_proofs = []
 
-        for i in range(int(n_leafs)):
+        for i in range(len(whitelists)):
             this_proof=[]
 
             proof_dicts=mt.get_proof(i)
@@ -88,12 +92,15 @@ class FFIProvider():
             output_file.write(json_output)
 
     def output_merkle_root(self,filename):
+        leafs = []
+        with open(filename, "r") as f:
+            for line in f.readlines():
+                leafs += [line[:-1]]
+        # print(leafs)
+        leafs = list(map(lambda x: bytes.fromhex(x), leafs))
         mt = MerkleTools()
 
-        with open(filename, "r") as f:
-            n_leafs = len(f.readlines())
-        
-        mt.add_leaf([str(i).encode() for i in range(int(n_leafs))], True)
+        mt.add_leaf(leafs, True)
         mt.make_tree()
 
         root='0x' + str(mt.get_merkle_root())
