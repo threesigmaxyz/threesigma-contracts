@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.13;
 
-import "fixtures/MerkleTreeFixture.sol";
+import "./fixtures/MerkleTreeFixture.sol";
 
 contract MerkleTreeExtensionTest is MerkleTreeFixture {
 
