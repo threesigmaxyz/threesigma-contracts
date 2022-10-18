@@ -15,9 +15,6 @@ class FFIProvider():
         sys.stdout.write(string)
 
     def output_addresses(self, filename):
-        print()
-        if os.path.exists(path + "/leaves.json"):
-            os.remove(path + "/leaves.json")
 
         addresses = []
         with open(filename, "r") as f:
@@ -51,8 +48,6 @@ class FFIProvider():
         sys.stdout.write("".join(strings))
     
     def output_merkle_proofs(self, filename):
-        if os.path.exists(path + "/proofs.json"):
-            os.remove(path + "/proofs.json")
 
         mt = MerkleTools()
 
@@ -108,8 +103,6 @@ class FFIProvider():
         sys.stdout.write(root)
 
     def output_merkle_tree(self, filename):
-        if os.path.exists(path + "/merkle_tree.json"):
-            os.remove(path + "/merkle_tree.json")
 
         #Build the Merkle Tree
         mt = MerkleTools()
