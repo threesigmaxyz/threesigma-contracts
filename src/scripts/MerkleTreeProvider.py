@@ -61,10 +61,6 @@ class FFIProvider():
         mt.add_leaf(whitelists_bytes, True)
         mt.make_tree()
 
-        lengths = [len(mt.get_proof(i)) for i in range(len(whitelists))]
-
-        output_dict = {'lengths': lengths}
-
         all_proofs = []
 
         for i in range(len(whitelists)):
@@ -79,7 +75,7 @@ class FFIProvider():
 
             all_proofs.append(this_proof)
         
-        output_dict['proofs'] = all_proofs
+        output_dict = {'proofs': all_proofs}
 
         json_output = json.dumps(output_dict, indent = 4)
 

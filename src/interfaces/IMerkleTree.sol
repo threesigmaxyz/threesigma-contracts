@@ -8,7 +8,6 @@ interface IMerkleTree {
     }
 
     struct Proofs {
-        uint32[] proofsLength;
         bytes32[][] proofs;
     }
 
