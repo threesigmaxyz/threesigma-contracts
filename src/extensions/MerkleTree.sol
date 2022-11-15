@@ -13,7 +13,7 @@ contract MerkleTreeHelper is Test, IMerkleTree {
 
         _executeScript("output_addresses", filename);
 
-        string memory json = vm.readFile("merkle_tree_output/leaves.json");
+        string memory json = vm.readFile("test/res/merkle_tree_output/leaves.json");
         bytes memory rawAddresses = vm.parseJson(json);
         Leaves memory leaves = abi.decode(rawAddresses, (Leaves));
 
@@ -38,7 +38,7 @@ contract MerkleTreeHelper is Test, IMerkleTree {
         
         _executeScript("output_merkle_proofs", filename);
 
-        string memory json = vm.readFile("merkle_tree_output/proofs.json");
+        string memory json = vm.readFile("test/res/merkle_tree_output/proofs.json");
         bytes memory rawProofs = vm.parseJson(json);
         Proofs memory proofs = abi.decode(rawProofs, (Proofs));
 
