@@ -4,7 +4,7 @@ import os
 from functools import reduce
 from utils.merkletools import MerkleTools
 
-path = os.path.realpath("lib/threesigma-contracts/src/extensions/merkle_tree_output/")
+path = os.path.realpath("merkle_tree_output/")
 class FFIProvider():
     
 
