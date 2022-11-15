@@ -4,6 +4,7 @@ import os
 from functools import reduce
 from utils.merkletools import MerkleTools
 
+path_prelim = os.path.realpath("test/res/")
 path = os.path.realpath("test/res/merkle_tree_output/")
 class FFIProvider():
     
@@ -143,7 +144,9 @@ class FFIProvider():
 
 if __name__ == "__main__":
     
-    if (not(os.path.exists(path))):
+    if not os.path.exists(path):
+        print('hi')
+        os.mkdir(path_prelim)
         os.mkdir(path)
 
     func_name = sys.argv[1]
