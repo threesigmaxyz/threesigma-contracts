@@ -142,6 +142,9 @@ class FFIProvider():
             output_file.write(json_output)
 
 if __name__ == "__main__":
+    
+    if (not(os.path.exists(path))):
+        os.mkdir(path)
 
     func_name = sys.argv[1]
     arg2 = sys.argv[2]
