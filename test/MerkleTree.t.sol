@@ -5,7 +5,7 @@ import "./fixtures/MerkleTreeFixture.sol";
 
 contract MerkleTreeExtensionTest is MerkleTreeFixture {
 
-    function test_CanGetLeavesCorrectly() public {
+    /*function test_CanGetLeavesCorrectly() public {
         Leaves memory leavesResult = getLeaves(INPUT_FILE);
 
         assertEq(leavesResult.leaves.length, EXPECTED_LENGTH);
@@ -89,5 +89,5 @@ contract MerkleTreeExtensionTest is MerkleTreeFixture {
 
             unchecked {++k;}
         }
-    }
+    }*/
 }
